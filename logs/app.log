@@ -1,0 +1,9 @@
+2026-06-30 15:20:08.152 INFO  c.e.s.SpringBootStudyApplication - Starting SpringBootStudyApplication using Java 21.0.10 with PID 15204 (D:\Developing\Spring_Boot_Projects\study\spring-boot-study\target\classes started by mamed in D:\Developing\Spring_Boot_Projects\study\spring-boot-study)
+2026-06-30 15:20:08.154 INFO  c.e.s.SpringBootStudyApplication - The following 1 profile is active: "prod"
+2026-06-30 15:20:09.802 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-30 15:20:10.117 INFO  c.e.s.SpringBootStudyApplication - Started SpringBootStudyApplication in 2.325 seconds (process running for 2.636)
+2026-06-30 15:20:10.160 INFO  c.e.s.service.TaskService - Задача создана с title=task1,id=task11782818410159
+2026-06-30 15:20:10.161 INFO  c.e.s.service.TaskService - Задачи с id=task11782818410159 была удалена из БД
+2026-06-30 15:20:10.161 WARN  c.e.s.service.TaskService - Попытка создать задачу с пустым именем.
+2026-06-30 15:20:27.555 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]

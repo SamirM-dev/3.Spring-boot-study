@@ -1,5 +1,6 @@
 package com.example.spring_boot_study.runner;
 
+import com.example.spring_boot_study.service.TaskService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
@@ -9,8 +10,10 @@ import org.springframework.stereotype.Component;
 @Order(1)
 public class MyCommandLineRunner implements CommandLineRunner {
     private final Environment environment;
-    public  MyCommandLineRunner(Environment environment){
+    private final TaskService taskService;
+    public  MyCommandLineRunner(Environment environment,TaskService taskService){
         this.environment=environment;
+        this.taskService=taskService;
     }
 
     @Override
@@ -22,6 +25,19 @@ public class MyCommandLineRunner implements CommandLineRunner {
         System.out.println("Профиль: " + activeProfile);
         System.out.println("Порт: " + port);
         System.out.println("========================================");
+
+        System.out.println("createTask - normal:");
+        String taskId=taskService.createTask("task1");
+        System.out.println();
+        System.out.println("deleteTask - normal:");
+        taskService.deleteTask(taskId);
+        System.out.println();
+        System.out.println("createTask - error:");
+        try {
+            taskService.createTask("");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Поймано ожидаемое исключение: " + e.getMessage());
+        }
 
     }
 }
